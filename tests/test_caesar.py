@@ -37,7 +37,7 @@ def test_with_non_alpha():
     expected = "Hjnnf b 1!"
     assert actual == expected
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_round_trip():
     original = "Gimme a 1!"
     shift = 5
@@ -46,7 +46,7 @@ def test_round_trip():
     expected = original
     assert actual == expected
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_crack_phrase():
     phrase = "It was the best of times, it was the worst of times."
     encrypted = encrypt(phrase, 10)

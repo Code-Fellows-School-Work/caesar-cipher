@@ -5,38 +5,40 @@ def encrypt(string, shift):
     encrypt_string = ""
 
     for char in original_string:
-        # print(char)
-        shifted_ord = ord(char) + shift
-        # print(shifted_ord)
-        # identifies if there's a space in the string and removes the shift to preserve the space
-        if shifted_ord == 33:
-            shifted_ord = shifted_ord - 1
-        elif shifted_ord == 34:
-            shifted_ord = shifted_ord - 1
-        # if the original code contains a number, ignore the shift
-        elif 48 <= shifted_ord <= 57:
-            shifted_ord = shifted_ord - shift
-        # if the unicode does not exceed 122, then keep the unicode number
-        elif shifted_ord <= 122:
-            shifted_ord = shifted_ord + 0
-            # print("less than 122", shifted_ord)
-        # if the unicode number exceeds 122, then do the conversion to keep it within the alphabet
-        elif shifted_ord > 122:
-            # print("greater than 122", shifted_ord)
-            shifted_ord = shifted_ord - 26
+        
+        # global variable
+        before_shift = ord(char)
+        # print(before_shift)
+
+        # print(shifted_char)
+        if char.isalpha():
+            shifted_ord = before_shift + shift
+            # if the unicode does not exceed 122, then keep the unicode number
+            if shifted_ord <= 122:
+                shifted_ord = shifted_ord + 0
+                # print("less than 122", shifted_ord)
+            # if the unicode number exceeds 122, then do the conversion to keep it within the alphabet
+            elif shifted_ord > 122:
+                # print("greater than 122", shifted_ord)
+                shifted_ord = shifted_ord - 26
+            shifted_char = chr(shifted_ord)
+        else:    
+            shifted_char = char
         
         
         # print("updated ord", shifted_ord)
-
-        shifted_char = chr(shifted_ord)
-        # print("shifted characters:", shifted_char)
+        # print(char, shifted_ord)
+        # shifted_char = chr(shifted_ord)
+        # print(char, before_shift, shifted_char)
         encrypt_string += shifted_char
 
     return(encrypt_string)
 
 
-def decrypt(encoded, shift):
-    return encrypt(encoded, -shift)
+def decrypt(encrypt_string, shift):
+    print(encrypt_string)
+    print(shift)
+    return encrypt(encrypt_string, -shift)
 
 def crack():
     pass
