@@ -19,13 +19,13 @@ def test_encrypt_shift_20():
     expected = "ujjfy"
     assert actual == expected
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_uppercase():
     actual = encrypt("BANANA", 10)
     expected = "LKXKXK"
     assert actual == expected
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_with_whitespace():
     actual = encrypt("apples and bananas", 1)
     expected = "bqqmft boe cbobobt"
