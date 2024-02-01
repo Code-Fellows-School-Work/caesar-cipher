@@ -13,6 +13,9 @@ def encrypt(string, shift):
             shifted_ord = shifted_ord - 1
         elif shifted_ord == 34:
             shifted_ord = shifted_ord - 1
+        # if the original code contains a number, ignore the shift
+        elif 48 <= shifted_ord <= 57:
+            shifted_ord = shifted_ord - shift
         # if the unicode does not exceed 122, then keep the unicode number
         elif shifted_ord <= 122:
             shifted_ord = shifted_ord + 0
