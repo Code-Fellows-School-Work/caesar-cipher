@@ -1,1 +1,4 @@
 .venv
+.pytest
+__pycahce__
+.pytest_cache
