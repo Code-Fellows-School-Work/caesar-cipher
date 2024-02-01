@@ -11,6 +11,8 @@ def encrypt(string, shift):
         # identifies if there's a space in the string and removes the shift to preserve the space
         if shifted_ord == 33:
             shifted_ord = shifted_ord - 1
+        elif shifted_ord == 34:
+            shifted_ord = shifted_ord - 1
         # if the unicode does not exceed 122, then keep the unicode number
         elif shifted_ord <= 122:
             shifted_ord = shifted_ord + 0
